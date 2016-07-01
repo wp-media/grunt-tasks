@@ -1,0 +1,14 @@
+{
+  "name": "sass",
+  "version": "1.0.0",
+  "description": "Grunt SASS Task",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "WP Media <contact@wp-media.me>",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}
