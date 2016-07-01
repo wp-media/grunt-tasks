@@ -31,11 +31,10 @@ module.exports = grunt => {
 			dist: {
 				options: {
 					sourcemap: 'none',
-					noCache: true,
-					require: 'sass-globbing'
+					noCache: true
 				},
 				files: {
-					'./public/css/styles.css' : './sources/sass/bootstrap.scss'
+					'./public/css/styles.css': './sources/sass/bootstrap.scss'
 				}
 			}
 		},
@@ -71,25 +70,27 @@ module.exports = grunt => {
 		notify_hooks: {
 			options: {
 				enabled: true,
-				max_jshint_notifications: 2,
 				title: '<%= pkg.name %>',
 				success: true,
-				duration: 1
+				duration: 1 // in seconds
 			}
 		}
 
-	});
+	})
 
-	grunt.loadNpmTasks('grunt-contrib-sass');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-autoprefixer');
-	grunt.loadNpmTasks('grunt-notify');
-	grunt.loadNpmTasks('grunt-banner');
+	// Load NPM Tasks
+	grunt.loadNpmTasks( 'grunt-contrib-sass' )
+	grunt.loadNpmTasks( 'grunt-contrib-watch' )
+	grunt.loadNpmTasks( 'grunt-contrib-cssmin' )
+	grunt.loadNpmTasks( 'grunt-autoprefixer' )
+	grunt.loadNpmTasks( 'grunt-notify' )
+	grunt.loadNpmTasks( 'grunt-banner' )
 
-	grunt.task.run('notify_hooks');
+	// Run Notifications
+	grunt.task.run( 'notify_hooks' )
 	
-	grunt.registerTask('default', ['sass', 'autoprefixer']);
-	grunt.registerTask('dist', ['sass', 'autoprefixer', 'cssmin', 'usebanner']);
+	// Register Tasks
+	grunt.registerTask( 'default', ['sass', 'autoprefixer'] )
+	grunt.registerTask( 'dist', ['sass', 'autoprefixer', 'cssmin', 'usebanner'] )
 
 }
