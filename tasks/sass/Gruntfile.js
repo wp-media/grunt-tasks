@@ -1,6 +1,32 @@
 'use strict'
 
+
 module.exports = grunt => {
+
+
+	/* ==========================================================================
+	   Set-up environment
+	   ========================================================================== */
+
+	// Inputs
+	var
+		sass_folder      = './sources/sass'
+		, sass_bootstrap =  'bootstrap.scss'
+
+	// Output
+	var
+		css_folder       = './public/css'
+		, css_dev_file   = 'styles.css'
+		, css_dist_file  = 'styles.min.css'
+
+	
+	/* ==========================================================================
+	   Tasks
+	   ========================================================================== */
+
+	
+	// Tasks autoloader
+	require('load-grunt-tasks')(grunt)
 
 	grunt.initConfig({
 		
@@ -21,7 +47,7 @@ module.exports = grunt => {
 					banner: '<%= banner %>'
 				},
 				files: {
-					src: ['./public/css/styles.min.css']
+					src: [ css_folder + '/' + css_dist_file ]
 				}
 			}
 		},
@@ -34,7 +60,7 @@ module.exports = grunt => {
 					noCache: true
 				},
 				files: {
-					'./public/css/styles.css': './sources/sass/bootstrap.scss'
+					[ css_folder + '/' + css_dev_file ]: sass_folder + '/' + sass_bootstrap
 				}
 			}
 		},
@@ -45,7 +71,7 @@ module.exports = grunt => {
 				browsers: ['last 2 version', 'ie 9']
 			},
 			styles: {
-				src: './public/css/styles.css'
+				src: css_folder + '/' + css_dev_file
 			}
 		},
 
@@ -53,7 +79,7 @@ module.exports = grunt => {
 		cssmin: {
 			combine: {
 				files: {
-					'./public/css/styles.min.css': ['./public/css/*.css', '!./public/css/*.min.css']
+					[ css_folder + '/' + css_dist_file ]: [ css_folder + '/*.css', '!' + css_folder + '/*.min.css' ]
 				}
 			}
 		},
@@ -61,8 +87,8 @@ module.exports = grunt => {
 		// Watch SASS files
 		watch: {
 			css: {
-				files: ['./sources/sass/**/*.scss'],
-				tasks: ['sass', 'autoprefixer']
+				files: [ sass_folder + '/**/*.scss' ],
+				tasks: [ 'sass', 'autoprefixer' ]
 			}
 		},
 
@@ -77,14 +103,6 @@ module.exports = grunt => {
 		}
 
 	})
-
-	// Load NPM Tasks
-	grunt.loadNpmTasks( 'grunt-contrib-sass' )
-	grunt.loadNpmTasks( 'grunt-contrib-watch' )
-	grunt.loadNpmTasks( 'grunt-contrib-cssmin' )
-	grunt.loadNpmTasks( 'grunt-autoprefixer' )
-	grunt.loadNpmTasks( 'grunt-notify' )
-	grunt.loadNpmTasks( 'grunt-banner' )
 
 	// Run Notifications
 	grunt.task.run( 'notify_hooks' )

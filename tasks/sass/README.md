@@ -1,11 +1,15 @@
-# complete-sass-workflow
+# SASS
 > A complete workflow for your SASS project
 
 ## Installation
 
+Install dependencies :
+
 ```
 npm install
 ```
+
+Set up your environment by editing variables inside `Gruntfile.js` file  (inputs/outputs)
 
 ## Tasks
 
@@ -36,3 +40,4 @@ npm run dist
 - grunt-contrib-sass
 - grunt-contrib-watch
 - grunt-notify
+- load-grunt-tasks
