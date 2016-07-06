@@ -54,9 +54,6 @@ module.exports = grunt => {
 
 		// Validate JS files with ESLint
 		eslint: {
-			options: {
-				configFile: './eslint.json'
-			},
 			target: [ js_src_folder + '/**/*.js' ]
 		},
 

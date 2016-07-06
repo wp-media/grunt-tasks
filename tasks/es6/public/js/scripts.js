@@ -96,14 +96,10 @@ var _user = require('./libs/user');
 
 var _user2 = _interopRequireDefault(_user);
 
-var _voice = require('./libs/voice');
-
-var _voice2 = _interopRequireDefault(_voice);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var me = new _user2.default('Sebastien');
 
 me.sayHello();
 
-},{"./libs/user":1,"./libs/voice":2}]},{},[3]);
+},{"./libs/user":1}]},{},[3]);
