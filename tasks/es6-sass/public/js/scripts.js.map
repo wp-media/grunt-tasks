@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../sources/js/main.js"],"names":[],"mappings":";;AAAA;;;;AACA","file":"scripts.js","sourcesContent":["import User from './libs/user'\nimport Voice from './libs/voice'\n"]}

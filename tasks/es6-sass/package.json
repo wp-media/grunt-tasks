@@ -1,0 +1,31 @@
+{
+  "name": "es6-sass",
+  "version": "1.0.0",
+  "description": "Complete ES6 + SASS Workflow",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "grunt watch",
+    "dist": "grunt dist"
+  },
+  "author": "WP Media <contact@wp-media.me>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-plugin-transform-es2015-object-super": "^6.8.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "babelify": "^7.3.0",
+    "grunt": "^1.0.1",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-banner": "^0.6.0",
+    "grunt-browserify": "^5.0.0",
+    "grunt-concurrent": "^2.3.0",
+    "grunt-contrib-cssmin": "^1.0.1",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-eslint": "^19.0.0",
+    "grunt-notify": "^0.4.5",
+    "load-grunt-tasks": "^3.5.0"
+  }
+}
